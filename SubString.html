@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Substring</title>
+        <script>
+            function GetDetails(){
+                var email = document.getElementById("txtEmail").value;
+                var atPos = email.indexOf("@");
+                var id = email.substring(atPos,0);
+                var domain = email.substring(atPos + 1);
+                document.write(`Your Id : ${id} <br> Registered @ : ${domain}`);
+
+            }
+        </script>
+    </head>
+    <body>
+        Email:
+        <input type="text" id="txtEmail">
+        <button onclick="GetDetails()">Submit</button>
+    </body>
+</html>

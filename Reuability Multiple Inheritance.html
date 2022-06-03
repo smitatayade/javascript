@@ -1,0 +1,29 @@
+<script>
+    class BankApplication_Version1{
+        CorporateBanking(){
+            document.write(`Corporate Banking Module <br>`);
+        }
+        RetailBanking(){
+            document.write(`Retail Banking Module <br>`);
+        }
+    }
+    class BankApplication_Version2 extends BankApplication_Version1
+    {
+        MutualFunds(){
+            document.write(`Mutual Funds Module <br>`);
+        }
+    }
+    class BankApplication extends BankApplication_Version2
+    {
+        BankName;
+        print(){
+            document.write(this.BankName);
+        }
+    }
+    let obj = new BankApplication();
+    obj.BankName = "<h2>HDFC Bank</h2>";
+    obj.print();
+    obj.CorporateBanking();
+    obj.RetailBanking();
+    obj.MutualFunds();
+</script>

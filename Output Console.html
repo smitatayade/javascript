@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Output Using Console</title>
+        <script>
+            function DeleteClick(){
+                console.warn("Delete Clicked");
+               x = confirm("Record will be deleted");
+               if(x==true){
+                   document.write("<h2>Record Deleted</h2>");
+                   console.error("Delete Confirmed");
+               }else{
+                   document.write("Canceled...");
+                   console.info("Canceled");
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Output Demo</h2>
+        <button onclick="DeleteClick()">Delete</button>
+    </body>
+</html>

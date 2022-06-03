@@ -1,0 +1,29 @@
+<script>
+    function f1(){
+        var a=10;
+        var b="20";
+        var z=a+b;          //if u put * instaed of + then multiplication operation is happened and result is 200
+        document.write(`Z=${z}<br>`);
+    }
+    function f2(){
+        var i = 40;
+        var j = "30";  //if u write like 40ABC then only 30 get converted ABC not converted but the in first position their must be number not character or string  
+        var k = i+parseInt(j);      //j is converted into int using parseInt
+        document.write(`K=${k}<br>`);
+    }
+    function f3(){
+        var a=10.45;
+        var b=12.34;
+        var c=parseFloat(a)+parseFloat(b);
+        document.write(`C=${c}<br>`);
+    }
+    function f4(){
+        var x=45000.90;
+        var s=x.toString();
+        document.write(`X is ${typeof x} <br> S is ${typeof s}`);
+    }
+    f1();
+    f2();
+    f3();
+    f4();
+</script>

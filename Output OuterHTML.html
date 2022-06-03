@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Output Using OuterHTML</title>
+        <script>
+            function DeleteClick(){
+               console.warn("Delete Clicked");
+               x = confirm("Record will be deleted");
+               msg = document.getElementById("msg");
+               if(x==true){
+                  msg.innerHTML="<h2>Record Deleted Successfully </h2>";
+               }else{
+                 msg.outerHTML = "<h2>Canceled...</h2>";
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Output Demo</h2>
+        <button onclick="DeleteClick()">Delete</button>
+        <div id="msg"></div>
+    </body>
+</html>

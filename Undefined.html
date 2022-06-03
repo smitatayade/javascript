@@ -1,0 +1,27 @@
+<script>
+    function f1(){
+        var x ;
+        document.write(`X = ${x}<br>`);
+    }
+    function f2(){
+        var name = "samsung T.V";
+        var price;          //value for price is not assigned so price noy get printed in output
+        if(price==undefined){
+            document.write(`Name=${name}<br>`);
+        }else{
+            document.write(`Name=${name}<br>Price=${price}<br>`);
+        }
+    }
+    function f3(){
+        var product = "Tony T.V";
+        var value = 2000;
+        if(value){
+            document.write(`Product=${product}<br>Price=${value}<br>`);
+        }else{
+            document.write(`Product=${product}`);
+        }
+    }
+    f1();       //var is declared but value is not assigned is called undefined
+    f2();       //if u assign value for price then price also get print else only name is printing
+    f3();       //f3 is same as f2
+</script>

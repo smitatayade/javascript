@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Output Using Confirm</title>
+        <script>
+            function DeleteClick(){
+               x = confirm("Record will be deleted");
+               if(x==true){
+                   alert("Record Deleted");
+               }else{
+                   alert("Canceled...");
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Output Demo</h2>
+        <button onclick="DeleteClick()">Delete</button>
+    </body>
+</html>

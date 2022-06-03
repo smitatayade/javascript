@@ -1,0 +1,16 @@
+<script>
+    class FirstClass{
+        print(){
+            document.write("First Class Print Method<br>");
+        }
+    }
+    class SecondClass{
+        print(){
+            let obj = new FirstClass();
+            obj.print();
+            document.write("Second Class Print Method<br>");
+        }
+    }
+    let obj = new SecondClass();
+    obj.print();
+</script>

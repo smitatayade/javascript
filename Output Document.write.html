@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Output Using document.write</title>
+        <script>
+            function DeleteClick(){
+               x = confirm("Record will be deleted");
+               if(x==true){
+                   document.write("<h2>Record Deleted</h2>");
+               }else{
+                   document.write("Canceled...");
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Output Demo</h2>
+        <button onclick="DeleteClick()">Delete</button>
+    </body>
+</html>

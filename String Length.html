@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Property</title>
+        <script>
+            function SubmitClick(){
+                var password = document.getElementById("txtPwd").value;
+                if(password.length>10) {
+                    alert(`Password you entered contains ${password.length} Chars\n You can enter password with max 10 chars only`);
+                } else {
+                    document.write("Submitted Successfully..");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Password</legend>
+            <input type="password" id="txtPwd">
+            <button onclick="SubmitClick()">Submit</button>
+        </fieldset>
+    </body>
+</html>

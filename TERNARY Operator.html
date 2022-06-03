@@ -1,0 +1,15 @@
+<script>
+    function f1(){
+        var product = {
+            Name: "TV",
+            Price: 46000.44,
+            Stock: true
+        }
+        document.write(`
+           Name=${product.Name}<br>
+           Price=${product.Price}<br>
+           Stock=${(product.Stock==true)?"Available":"Out of Stock"}
+        `)
+    }
+    f1();
+</script>

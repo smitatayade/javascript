@@ -1,0 +1,23 @@
+<script>
+    "use strict";
+    function f1(){
+        var x;        //Declaring Variable
+        x = 10;       //Assigning value to Variable
+        if(x==10){
+            var y=20;  //Initializing the Variable        Initialization means Declaring and Assigning Value At A Time
+            var y = 40;   //Shadowing          Shadowing Means redeclaring same variable
+        }
+        document.write("X=" + x + "<br>" + "Y=" +y )
+    }
+    f1();
+</script>
+
+<script>
+    "use strict";
+    function f1(){
+        k = 10;       //Assigning value to Variable
+        document.write("K=" + k)
+        var k;      //Hoisting     Hoisting means u can use variable before declaring
+    }
+    f1();
+</script>

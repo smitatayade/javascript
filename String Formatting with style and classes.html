@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Property</title>
+        <style>
+            .invalid-style{
+                color:red;
+                text-align: center;
+                font-style: italic;
+            }
+            .valid-style {
+                color:green;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function SubmitClick(){
+                var password = document.getElementById("txtPwd").value;
+                var msg = document.getElementById("msg");
+                if(password.length>10) {
+                    msg.innerHTML=`Password you entered contains ${password.length} Chars <br> You can enter password with max 10 chars only`;
+                    msg.className="invalid-style";
+                } else {
+                    msg.innerHTML="Submitted Successfully..";
+                    msg.className="valid-style";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Password</legend>
+            <input type="password" id="txtPwd">
+            <button onclick="SubmitClick()">Submit</button>
+            <h2 id="msg"></h2>
+        </fieldset>
+    </body>
+</html>

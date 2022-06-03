@@ -1,0 +1,17 @@
+<!--For using strict mode-->
+<!--Strict mode force developer to write code according to language standards-->
+<script>
+    "use strict";
+    function f1(){
+        var x;
+        x = 10;
+        document.write(`x=${x}`);
+    }
+    f1();
+
+    function f2(){
+        document.write("2 raised to power of 3 : " + (Math.pow(2,3)))
+    }
+    f2();
+</script>
+<!--The above f2 function can be written as (2**3) instead of (Math-pow(2,3))-->

@@ -1,0 +1,16 @@
+<script>
+    class FirstClass{
+        print(){
+            document.write("First Class Print Method<br>");
+        }
+    }
+    //derived class
+    class SecondClass extends FirstClass{
+        print(){
+            super.print();
+            document.write("Second Class Print Method<br>");
+        }
+    }
+    let obj = new SecondClass();
+    obj.print();
+</script>

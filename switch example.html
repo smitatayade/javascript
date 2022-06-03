@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Switch</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function ViewChange(){
+                var view = document.getElementById("lstViews").value;
+                var lblTitle = document.getElementById("lblTitle");
+
+                function Display(details, preview, description){
+                    document.getElementById("detailsContainer").style.display=details;
+                    document.getElementById("previewContainer").style.display=preview;
+                    document.getElementById("descriptionContainer").style.display=description;
+                }
+                switch(view)
+                {
+                    case "basic": 
+                    Display("block","none","none");
+                    lblTitle.innerHTML = "Basic Details";
+                    break;
+                    case "preview": 
+                    Display("none","block","none");
+                    lblTitle.innerHTML = "Preview";
+                    break;
+                    case "description": 
+                    Display("none","none","block");
+                    lblTitle.innerHTML = "Description";
+                    break;
+                    default: 
+                    Display("none","none","none");
+                    lblTitle.innerHTML="Please Select any View";
+                    break;
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <fieldset>
+            <legend>Product Details</legend>
+            <select class="form-select" id="lstViews" onchange="ViewChange()">
+                <option>Select any View</option>
+                <option value="basic">Basic Details</option>
+                <option value="preview">Preview</option>
+                <option value="description">Description</option>
+            </select>
+        </fieldset>
+        <fieldset class="mt-4">
+            <legend>
+                <label id="lblTitle"></label>
+            </legend>
+            <div id="detailsContainer" style="display: none;">
+                <dl>
+                    <dt>Name</dt>
+                    <dd>blossom painting</dd>
+                    <dt>Price</dt>
+                    <dd>4560.45</dd>
+                </dl>
+            </div>
+            <div id="previewContainer" style="display: none;">
+                <img src="../assets/blossom.jpg" width="200" height="200">
+            </div>
+            <div id="descriptionContainer" style="display: none;">
+                <h2>Something about Blossom painting</h2>
+                <p>Features</p>
+            </div>
+        </fieldset>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<script>
+    function f1(){
+        var searchstring = location.search;
+        var str =  searchstring.substring(searchstring.indexOf("=")+1);
+        var data =[
+            {
+              Topic: "Javascript", Description: "it is cliet side scripting language with HTML."
+            },
+            {
+                Topic: "jQuery", Description:"It is Javascript Library"
+            }
+        ];
+        for(var item of data){
+            if(item.Topic==str){
+                document.write(item.Description);
+            }
+        }
+    }
+    f1();
+</script>

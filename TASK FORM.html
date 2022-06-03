@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>JS Form</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../fonts/css/all.css">
+    
+    <style>
+       body{
+           justify-content: center;
+           align-items: center;
+       }
+        .box-center{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:1000px;
+            }
+        
+        
+        .strong-style{
+            border: 2px solid green;
+            box-shadow: 2px 3px 4px green;
+        }
+        .weak-style{
+            border: 2px solid orange;
+            box-shadow: 2px 3px 4px orange;
+            
+        }
+        .poor-style{
+            border: 2px solid red;
+            box-shadow: 2px 3px 4px red;
+          
+        }
+        .body-back{
+            background-image: url(../assets/back2.jpg);
+            background-repeat: no-repeat;
+            width:600px;
+            
+        }
+    </style> 
+    <script type="text/javascript">
+        function verifypassword(){
+            var password=document.getElementById("password");
+            var regexp=/(?=.*[^A-Za-z0-9_])\w{4,15}/;
+            var msg=document.getElementById("msg4");
+            if(password.value.match(regexp))
+            {
+             msg.innerHTML="strong password";
+             msg.className="text-success";
+             password.className="strong-style";
+            }
+            else
+            {
+                if(password.value.length<4)
+                {
+                    msg.innerHTML="poor password";
+                    msg.className="text-danger";
+                    password.className="poor-style";
+                }else{
+                    msg.innerHTML="weak password";
+                    msg.className="text-warning";
+                    password.className="weak-style";
+                }
+            }
+        }
+
+        function VerifyMobile(){
+            var phone=document.getElementById("mob");
+            var expr=/(?=.*[0-9])\d/;
+            var msg26=document.getElementById("msg22");
+            if(phone.value.match(expr) && phone.value.length==10){
+                msg26.innerHTML="verified";
+                phone.className="strong-style";
+                msg26.className="text-success"
+            }else{
+                msg26.innerHTML="invalid";
+                phone.className="poor-style";
+                msg26.className="text-danger";
+            }
+        }
+
+        function submitclick(){
+           
+            var username=document.getElementById("username");
+            var msg2 = document.getElementById("msg2");  
+            var submit1=document.getElementById("submit")
+            if(username.value==""){
+                msg2.innerHTML="User name can't be empty."; 
+                username.className="poor-style"
+            }
+            else{
+              submit1.outerHTML="<h2>Submitted Successfully</h2>"
+            }
+           
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="box-center">
+        <div class="p-5 m-5">
+            <div class="body-back p-5">
+                <label class="form-label mt-3"><h2>User Name: </h2></label>
+                <div class="mb-3 ms-5">
+                    <div class="input-group">
+                        <span class="fas fa-user-alt input-group-text"></span>
+                        <input type="text" class="form-control" id="username">
+                        <span class="fa fa-star input-group-text"></span>
+                        <span id="msg2"></span>
+                    </div>
+                  <span class="ms-5">Name required</span>
+                </div>
+                <label class="form-label"><h2>Password:</h2></label>
+                <div class="mb-3 ms-5">
+                    <div class="input-group">
+                        <span class="fa fa-lock input-group-text"></span>
+                        <input type="password" class="form-control" id="password" onkeyup="verifypassword()">
+                        <span class="fa fa-star input-group-text"></span>
+                        
+                        
+                  </div>
+                 
+                  <span id="msg4"></span>
+                </div>
+                <label class="form-label"><h2>Mobile No:</h2></label>
+                <div class="mb-3 ms-5">
+                        <div class="input-group">
+                            <span class="fa fa-phone input-group-text"></span>
+                            <span class="input-group-text" required>+91</span>
+                            <input class="form-control" type="text" id="mob" onkeyup="VerifyMobile()">
+                            <span class="fa fa-star input-group-text"></span>
+                            <span id="msg22"></span>
+                           
+                        </div>
+
+                </div>
+                <div class="mt-4 d-grid">
+                    <button class="btn btn-primary" onclick="submitclick()">Submit</button>
+                    <center><h2 id="submit"></h2></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+   
+</body>
+</html>

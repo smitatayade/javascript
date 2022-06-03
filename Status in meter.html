@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Property</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+             function VerifyPassword(){
+                var password=  document.getElementById("txtPwd").value;
+                var msg = document.getElementById("msg");
+                var statusBar = document.getElementById("statusBar");
+
+                function UpdateStaus(min, max, value){
+                    statusBar.min = min;
+                    statusBar.max = max;
+                    statusBar.value = value;
+                }
+
+                var regExp=/(?=.*[A-Z])\w{4,15}/;
+                if(password.match(regExp))
+                {
+                    msg.innerHTML="Strong Password";
+                    msg.className="text-success";
+                    UpdateStaus(1,100,100);
+                } else {
+                    if(password.length<4) {
+                        msg.innerHTML="Poor Password";
+                        msg.className="text-danger";
+                        UpdateStaus(1,100,20);
+                    } else {
+                        msg.innerHTML="Weak Password";
+                        msg.className="text-warning";
+                        UpdateStaus(1,100,70);
+                    }
+                }
+
+             }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <fieldset>
+            <legend>Password</legend>
+            <input type="password" id="txtPwd" onkeyup="VerifyPassword()">
+            <span id="msg"></span>
+            <div class="mt-2">
+              <meter id="statusBar" style="width: 200px; height: 30px;"></meter>
+            </div>
+        </fieldset>
+    </body>
+</html>
