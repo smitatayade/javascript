@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Touch Event</title>
+        <script>
+           function MoveImage(e){
+              var imgShirt = document.getElementById("imgShirt");
+              imgShirt.style.position = "fixed";
+              imgShirt.style.left = e.touches[0].clientX + "px";
+              imgShirt.style.top = e.touches[0].clientY + "px";
+           }
+        </script>
+    </head>
+    <body ontouchmove="MoveImage(event)">
+        
+            <img  id="imgShirt" src="../assets/Shirt.PNG" width="100" height="100">
+    
+    </body>
+</html>

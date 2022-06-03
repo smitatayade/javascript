@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+            var products = [
+                {Name:"JBL Speaker", Price: 5600.45, Photo: "../assets/person.jpg"},
+                {Name:"Earpods", Price: 4000.44, Photo:"../assets/blossom.jpg"},
+                {Name:"Nike Casuals", Price: 3000.44, Photo:"../assets/elon.jpg"},
+                {Name:"Lee Boot", Price: 5000.44, Photo:"../assets/yamini.jpg"},
+                {Name:"Shirt", Price: 1000.44, Photo:"../assets/back.jpg"},
+                {Name:"Jeans", Price: 2000.44, Photo:"../assets/back2.jpg"},
+            ]
+
+            function DisplayProduct(index) {
+                document.getElementById("lblName").innerHTML = products[index].Name;
+                document.getElementById("lblPrice").innerHTML = "&#8377;" + products[index].Price;
+                document.getElementById("pic").src= products[index].Photo;
+            }
+
+            function bodyload(){
+                DisplayProduct(0);
+            }
+            var count = 0;
+            function NextClick(){
+                if(count<products.length -1){
+                    count++; 
+                    DisplayProduct(count);
+                    document.getElementById("imageRange").value = count;
+                }
+                
+            }
+            function PreviousClick(){
+                if(count>0){
+                    count--;
+                    DisplayProduct(count);
+                    document.getElementById("imageRange").value = count;
+                }
+            }
+            function ChangeImage(){
+                var slider = document.getElementById("imageRange");
+                DisplayProduct(slider.value);
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <div class="mt-3 justify-content-center align-items-lg-center d-flex">
+          <div class="card w-75">
+            <div class="card-header text-center">
+                <h3 id="lblName"></h3>
+                <div>
+                    <input onchange="ChangeImage()" id="imageRange" type="range" value="0" class="form-range" min="0" max="5">
+                </div>
+            </div>
+            <div class="card-body text-center">
+              <img id="pic" class="w-100" height="300">
+              <p id="lblPrice"></p>
+            </div>
+            <div class="card-footer text-center">
+                <button onclick="PreviousClick()" class="btn btn-outline-danger"><span class="bi bi-arrow-left-circle"></span></button>
+                <button onclick="NextClick()" class="btn btn-outline-danger"><span class="bi bi-arrow-right-circle"></span></button>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

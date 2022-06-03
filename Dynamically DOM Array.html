@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic</title>
+        <script>
+            function bodyload(){
+                var div1 = document.createElement("span");
+                div1.innerHTML = "Para-2";
+                var div2 = document.createElement("span");
+                div2.innerHTML = "Para-3";
+                document.getElementById("para1").append(div1);
+                document.getElementById("para1").prepend(div2);
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <div id="para1">Para-1</div>
+    </body>
+</html>

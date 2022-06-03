@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Touch Event</title>
+        <script>
+            function ShoeTouched(){
+                document.write(`
+                   Name: 'Nike Casuals' <br>
+                   Price: 5600.66 <br>
+                   Stock: Available
+                `);
+            }
+            function ShirtTouched(){
+                document.write(`
+                   Name: 'Shirt' <br>
+                   Price: 1600.66 <br>
+                   Stock: Available
+                `);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Touch Product Image</p>
+        <div>
+            <img ontouchstart="ShoeTouched()" id="imgShoe" src="../assets/Shoe.PNG" width="100" height="100">
+            <img ontouchstart="ShirtTouched()" id="imgShirt" src="../assets/Shirt.PNG" width="100" height="100">
+        </div>
+    </body>
+</html>

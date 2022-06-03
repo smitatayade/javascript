@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Dynamic EMI Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    
+    
+    <style>
+       body{
+           justify-content: center;
+           align-items: center;
+       }
+        .box-center{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:1000px;
+            }
+        
+        .body-back{
+            background-image: url(../assets/back.jpg);
+            background-repeat: no-repeat;
+            
+            
+            
+        }
+    </style> 
+    <script>
+	  function GetAmount() {
+        document.getElementById("txtAmount").value = document.getElementById("rangeAmount").value;
+      }
+      function GetYears() {
+        document.getElementById("txtYears").value = document.getElementById("rangeYears").value;
+      }
+      function GetRate() {
+        document.getElementById("txtRate").value = document.getElementById("rangeRate").value;
+      }
+
+      function calculate() {
+        var principle = parseInt(document.getElementById("txtAmount").value);
+        var months = 12 * parseInt(document.getElementById("txtYears").value);
+        var interest = parseInt(document.getElementById("txtRate").value);
+        console.log(principle, months, interest);
+        var result = document.getElementById('result');
+        var payment;
+
+        payment = (principle * interest) / ((1 / (1 + interest)) * months);
+        console.log(payment);
+        result.innerHTML = `<center>Your Monthly EMI will be ${payment} per month</center> <br> <a href="#" class="text-primary"><center>Apply for a personal loan</center></a>` ;
+        result.className = 'bg-danger text-white p-3';
+      }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="box-center">
+        <div class="p-5 m-5">
+            <div class="body-back p-5">
+                <h2 class="m-5 text-danger" align="center">Personal Loan EMI Calculator</h2>
+                
+                <div class="mb-3 ms-5">
+                    <div class="input-group">
+                        <span class="input-group-text">Amount you need</span>
+                        <input type="text" size="6" class="form-control" value="50000" id="txtAmount"/>
+                    </div>
+		    <div>
+                      <input onchange="GetAmount()" type="range" min="50000" max="5000000" value="1000" class="form-range w-100" id="rangeAmount"/>
+                    </div>  
+		    <div>
+                      <label class="float-start">&#8377; 50,000</label>
+                      <label class="float-end">&#8377; 50,00,000</label>
+                    </div>
+                </div>
+               
+                <div class="mb-3 ms-5">
+                    <div class="input-group">
+                       <span class="input-group-text">for</span>
+                       <input type="text" size="6" class="form-control" value="1" id="txtYears" />
+                       <span class="input-group-text">years</span>
+                    </div>
+		    <div>
+                     <input onchange="GetYears()" type="range" min="1" max="5" value="1" class="form-range w-100" id="rangeYears" />
+                    </div>
+                    <div>
+                      <label class="float-start">1 year</label>
+                      <label class="float-end">5 years</label>
+                    </div>
+       
+                 </div>
+                 
+               
+            
+               
+                <div class="mb-3 ms-5">
+                        <div class="input-group">
+                           <span class="input-group-text">interest rate</span>
+                           <input type="text" size="6" class="form-control" value="10" id="txtRate" />
+                           <span class="input-group-text">%</span>
+                        </div>
+	                <div>
+                          <input onchange="GetRate()" type="range" min="10" max="21" value="10" class="form-range w-100" id="rangeRate" />
+                        </div>
+                        <div>
+                         <label class="float-start">10.%</label>
+                         <label class="float-end">21%</label>
+                       </div>
+
+                </div>
+                <div class="mt-5 d-grid">
+                    <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+                     <center class="mt-3"><div id="result"></div></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+   
+</body>
+</html>

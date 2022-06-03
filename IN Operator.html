@@ -1,0 +1,12 @@
+<script>
+    function f1(){
+      let product = {
+          Name: "TV",
+          Price: 46000.44,
+          Stock:true
+      }
+      delete product.Price;
+      document.write(`Is Price a Property of Product ? ${"Price" in product}`);
+  }
+  f1();
+</script>

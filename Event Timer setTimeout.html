@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timer Events SetTimeout()</title>
+        <script>
+            function m1(){
+                document.getElementById("msg").innerHTML="Hello! -Message-1";
+            }
+            function m2(){
+                document.getElementById("msg").innerHTML="How are You? -Message-2";
+            }
+            function m3(){
+                document.getElementById("msg").innerHTML="Welcome to Javascript -Message-3";
+            }
+            function bodyload(){
+                setTimeout(m1, 4000);
+                setTimeout(m2,7000);
+                setTimeout(m3,10000);
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <h1 align="center" id="msg"></h1>
+    </body>
+</html>

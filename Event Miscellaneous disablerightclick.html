@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Opening Image in new tab using dblclick miscellaneous event</title>
+        <script>
+            function OpenImage(){
+                window.open(`../assets/shirt.PNG`,`Shirt`,`width=500 height=400`);
+            }
+            function DisableRight(){
+                document.oncontextmenu = function(){
+                    alert("Right click Not Allowed");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid" oncontextmenu="DisableRight()" onselect="return false" onselectstart="return false">
+        <div class="mt-4">
+            <h2>Right Click Disabled On this Page</h2>
+            <img ondblclick="OpenImage()" src="../assets/Shirt.PNG" width="150" height="150" title="Double click image to view large">
+        </div>
+    </body>
+</html>

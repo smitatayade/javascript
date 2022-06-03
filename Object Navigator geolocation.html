@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geo Location</title>
+        <script>
+            function GetLocationDetails(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showLocation);
+                }
+            }
+                function showLocation(position){
+                    var LocationHolder = document.getElementById("locationHolder");
+                    locationHolder.innerHTML =
+                    `Latitude: ${position.coords.latitude}<br>
+                    Longitude:${position.coords.longitude}`
+                }
+            
+            
+        </script>
+    </head>    
+    <body>
+        <p>Click to get Location</p>
+        <button onclick="GetLocationDetails()">Get Location</button>
+        <div id="LocationHolder"></div>
+    </body>
+</html>

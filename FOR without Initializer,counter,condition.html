@@ -1,0 +1,23 @@
+<script>
+    function f1()
+    {
+        var i=1;
+        for( ; i<=10; i++) {        //in this intialization is not present inside for but still getting output. (initialized before for() it also work)
+            document.write(i + "<br>");
+        }
+    }
+    function f2()
+    {
+        var i=1;
+        for(; ;) {          //in this nothing is present in for() still getting otput (initalize ,condition&counter outside for() it also work)
+            document.write(i + "<br>");
+            if(i>=10)
+            {
+                break;
+            }
+            i++;
+        }
+    }
+    f1();
+    f2();
+</script>

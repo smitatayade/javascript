@@ -1,0 +1,25 @@
+<script>
+    function f1(){
+        var product = {
+            Name: "TV",
+            Price: 46000.44,
+            Stock: true
+        }
+        delete product.Price;
+        delete Math.PI;     // read-only
+        document.write("PI = "  + Math.PI + "<br>");
+        if(product.Price==undefined) {
+            document.write(`
+           Name=${product.Name}<br>
+           Stock=${(product.Stock==true)?"Available":"Out of Stock"}
+        `);
+        } else {
+        document.write(`
+           Name=${product.Name}<br>
+           Price=${product.Price}<br>
+           Stock=${(product.Stock==true)?"Available":"Out of Stock"}
+        `);
+        }
+    }
+    f1();
+</script>

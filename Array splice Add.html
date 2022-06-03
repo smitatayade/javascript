@@ -1,0 +1,11 @@
+<script>
+    function f1(){
+        var cities = ["Delhi", "Hyd"];
+        cities.splice(1,0,"Chennai","Goa");
+        for(var property in cities) 
+        {
+            document.write(`[${property}]-${cities[property]}<br>`);
+        }
+    }
+    f1();
+</script>

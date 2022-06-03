@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Dyamic Representation</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+            function GetTime(){
+                var now = new Date();
+                document.getElementById("time").innerHTML = now.toLocaleTimeString();
+            }
+            function GetSalutation(){
+                var now = new Date();
+                var hrs = now.getHours();
+                var salute = document.getElementById("salute");
+                var icon = document.getElementById("icon");
+                var username = prompt("Enter Your Name");
+            
+
+                if(hrs>=0 && hrs<=12){
+                    salute.innerHTML = "Hello ! " + username + "Good Morning";
+                    icon.className="bi bi-brightness-alt-high";
+                }else if(hrs>=14 && hrs<=16){
+                    salute.innerHTML = "Hello ! " + username + "Good Afternoon";
+                    icon.className="bi bi-brightness-high";
+                }else if(hrs>=17 && hrs<=23){
+                    salute.innerHTML = "Hello ! " + username + "Good Evening";
+                    icon.className="bi bi-brightness-alt-high-fill";
+                }
+            }
+            function bodyload(){
+                var now = new Date();
+                var date = document.getElementById("date");
+                //var time = document.getElementById("time");
+                var month = now.getMonth();
+                var day = now.getDay();
+                var dt = now.getDate();
+                var year = now.getFullYear();
+
+                var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                var months = ["January","february","march","april","may","june","july","august","september","Octomber","November","December"];
+
+                date.innerHTML = `${weekdays[day]} ${dt} , ${months[month]} ${year}`;
+                //time.innerHTML = now.toLocaleTimeString();
+                setInterval(GetTime,1000);
+                GetSalutation()
+
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <div class="btn-toolbar btn-danger mt-4 text-white p-2 justify-content-between">
+            <div class="btn-group">
+                <span> <span class="bi bi-cart4"></span>Amazon Shopping</span>
+            </div>
+            <div class="btn-group">
+                <span id="icon" style="font-size: 20px; font-weight: bold;"></span>
+                <span id="salute"></span>
+            </div>
+            <div class="btn-group">
+                <span id="date"></span> &nbsp; | &nbsp;
+                <span class="bi bi-alarm"></span> &nbsp;
+                <span id="time"></span>
+            </div>
+        </div>
+    </body>
+</html>

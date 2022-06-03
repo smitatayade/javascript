@@ -1,0 +1,16 @@
+<script>
+    function f1()
+    {
+       function VerifyUser(username, password, success, failure){
+           if(username=="john11" && password=="1234")
+           {
+               success();
+           } else {
+               failure();
+           }
+       }
+       VerifyUser("john","1234", function(){document.write("Login Success..")}, function(){document.write("Invalid Credentials")});
+    }
+    f1();
+ </script>
+ 

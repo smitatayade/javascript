@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number</title>
+        <script>
+            function VerifyAge(){
+                var age = document.getElementById("txtAge").value;
+                var msg = document.getElementById("msg");
+                if(isNaN(age)){
+                    msg.style.display="inline";
+                }else{
+                    msg.style.display="none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Age</legend>
+            <input type="text" id="txtAge" onblur="VerifyAge()">
+            <span id="msg" style="display:none;">Age Must be a Number</span>
+        </fieldset>
+    </body>
+</html>

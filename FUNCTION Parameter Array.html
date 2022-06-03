@@ -1,0 +1,19 @@
+<script>
+    function f1()
+    {
+        function PrintList(collection)
+        {
+            for(var item of collection) {
+                document.write(item + "<br>");
+            }
+        }
+        PrintList(["Electronics","Footwear","Fashion"]);
+        document.write("<hr>");
+        PrintList(new Array("TV","Mobile"));
+        document.write("<hr>");
+        var footwear = ["Nike Casuals", "Lee Cooper Boot"];
+        PrintList(footwear);
+    }
+    f1();
+ </script>
+ 

@@ -1,0 +1,13 @@
+<script>
+    function f1(){
+        var values = ["JBL Speaker", 34000.44, true, ['Delhi','Hyd'], function(){document.write("Welcome to Array")}];
+        document.write(`
+            Name: ${values[0]} <br>
+            Price: ${values[1]} <br>
+            Stock: ${values[2]} <br>
+            Shipped To: ${values[3][1]} <br>
+        `);
+        values[4]();
+    }
+    f1();
+</script>

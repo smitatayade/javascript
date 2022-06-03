@@ -1,0 +1,16 @@
+<script>
+    function f1(){
+        var Name = "Samsung TV";
+        var Price =8563.24;
+        var Manufactured = new Date();      //if u want specific date u can add in ("1999-09-22")
+        document.write(`Name=${Name}<br>Price=${Price}<br>Manufactured=${Manufactured}<br>`);
+    }
+    function f2(){
+        var Name = "Tony TV";
+        var Price =85653.24;
+        var Manufactured = new Date();      
+        document.write(`Name=${Name}<br>Price=${Price}<br>Manufactured=${Manufactured.toLocaleDateString()}`);//for writting in your own style
+    }
+    f1();
+    f2();
+</script>

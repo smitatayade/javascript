@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>By Name</title>
+        <script>
+            function bodyload(){
+             count = document.getElementsByClassName("img-header");
+             alert("TOTAL NO Of THIS CLASS NAME : " +count.length);
+            }
+        </script>
+    </head>
+    <body onload="bodyload()" >
+        <div>
+            <img name="pic" id="pic" width="100" height="100" border="1">
+            <img name="pic" class="img-header" width="100" height="100" border="1">
+        </div>
+        <div>
+            <form name="frmRegister" id="frmRegister">
+                <h3>Register</h3>
+                User Name :
+                <input type="text" name="txtName" id="txtName">
+                <input type="button" name="btnRegister" id="btnRegister"> 
+            </form>
+        </div>
+        <div>
+            <form name="frmLogin">
+                <h3>Login</h3>
+                Email :
+                <input type="email" name="txtEmail">
+                <input type="button" name="btnLogin" id="btnLogin"> 
+            </form>
+        </div>
+    </body>
+</html>

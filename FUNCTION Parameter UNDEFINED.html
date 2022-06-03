@@ -1,0 +1,16 @@
+<script>
+    function f1()
+    {
+        function PrintDetails(name, price, stock)
+        {
+             if(price==undefined) {
+                 document.write(`Name=${name}<br>Stock=${stock}`);
+             } else {
+                 document.write(`Name=${name}<br>Price=${price}<br>Stock=${stock}`);
+             }
+        }
+        PrintDetails("Samsung TV", undefined ,true);
+    }
+    f1();
+ </script>
+ 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Using Logical Operators</title>
+        <script>
+            var users = [
+                {
+                    UserName : `john`,
+                },
+                {
+                    UserName : `david_nit`,
+                },
+                {
+                    UserName : `john12`
+                }
+            ]
+            function VerifyUser(){
+                var username = document.getElementById("txtName").value;
+                var msg = document.getElementById("msg");
+                for(var user of users)
+                {
+                    if(user.UserName==username){
+                        msg.innerHTML = "User Name Taken - Try Another";
+                        msg.style.color = "red";
+                        break;
+                    }else{
+                        msg.innerHTML = "User Name Available";
+                        msg.style.color ="green";
+                    }
+                }
+            }
+           
+           
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Register User</legend>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" onkeyup="VerifyUser()" id="txtName"></dd>
+                <dd id="msg"></dd>
+            </dl>
+        </fieldset>
+    </body>
+</html>

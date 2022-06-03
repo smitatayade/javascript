@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>checking info of user and then enabling him to next page or error page</title>
+        <script>
+            function LoginClick(){
+                var username=document.getElementById("username").value;
+                var password=document.getElementById("password").value;
+                if(username=="john" && password=="john123"){
+                    location.href="FORWARD JUMP (IF) Operator.html";
+                }else{
+                    location.href="location error.html";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <dl>
+            <dt>User Nmae</dt>
+            <dd><input type="text" id="username"></dd>
+            <dt>Password</dt>
+            <dd><input type="password" id="password"></dd>
+        </dl>
+        <button onclick="LoginClick()">Login</button>
+    </body>
+</html>

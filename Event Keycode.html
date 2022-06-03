@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checking Caps lock is on or not</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+            function VerifyCaps(e){
+                var msg = document.getElementById("msg");
+                if(e.keyCode>=65 && e.keyCode<=90){
+                    msg.style.display = "block";
+                }else{
+                    msg.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <fieldset>
+            <legend>Verify Password</legend>
+            <input type="password" onkeypress="VerifyCaps(event)" class="form-control" id="txtPwd">
+            <div class="text-warning" id="msg" style="display:none;">
+            <span class="bi bi-exclamation-triangle"></span>
+            Warning : Caps is ON
+            </div>
+        </fieldset>
+    </body>
+</html>

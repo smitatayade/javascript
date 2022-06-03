@@ -1,0 +1,19 @@
+<script>
+    function f1()
+    {
+        function PrintProduct(id, name, price, stock)
+        {
+           document.write(`
+               Id = ${id} <br>
+               Name = ${name} <br>
+               Price = ${price} <br>
+               Stock = ${(stock)==true?"Available":"Out of Stock"} <br>
+           `);
+        }
+        PrintProduct(1, "Samsung TV", 56000.55, true);
+        document.write("<hr>")
+        PrintProduct(2, "Nike Casuals", 3400.55, false);
+    }
+    f1();
+ </script>
+ 

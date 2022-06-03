@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+           var products = [
+               {Name: "JBL Speaker", Photo: "../assets/Speaker.png"},
+               {Name: "Earpods", Photo: "../assets/Earpod.png"},
+               {Name: "Nike Casuals", Photo: "../assets/Shoe.png"},
+               {Name: "Lee Cooper Boot", Photo: "../assets/Shoe1.png"},
+               {Name: "Shirt", Photo: "../assets/shirt.png"},
+               {Name: "Jeans", Photo: "../assets/blossom.jpg"},
+           ]
+           function GetProduct(index) {
+               document.getElementById("lblName").innerHTML = products[index].Name;
+               document.getElementById("pic").src = products[index].Photo;
+           }
+           function bodyload() {
+               GetProduct(0);
+           }
+           var count = 0;
+           function SlideShow(){
+               count++;
+               GetProduct(count);
+           }
+           var show;
+           function StartClick(){
+               show = setInterval(SlideShow,5000);
+               document.getElementById("lblStatus").innerHTML = "Slide Show - Started";
+           }
+           function PauseClick(){
+               clearInterval(show);
+               document.getElementById("lblStatus").innerHTML = "Slide Show - Paused";
+           }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+       <div class="card mt-3">
+        <div class="card-header text-center">
+            <h2 id="lblName"></h2>
+            <p id="lblStatus"></p>
+        </div>
+        <div class="card-body text-center">
+            <img width="80%" id="pic" height="350">
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-success" onclick="StartClick()">
+                <span class="bi bi-play-btn-fill"></span>
+            </button>
+            <button class="btn btn-danger" onclick="PauseClick()">
+                <span class="bi bi-pause-btn-fill"></span>
+            </button>
+        </div>
+       </div>
+    </body>
+</html>
+

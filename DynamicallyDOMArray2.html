@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic</title>
+        <script>
+            var categories = ["All", "Electronics", "Footwear", "Fashion"];
+            function bodyload(){
+               var lstCategories = document.getElementById("lstCategories");
+               var categoriesMenu = document.getElementById("categoriesMenu");
+            
+               for(var item of categories)
+               {
+                   var li = document.createElement("li");
+                   li.innerHTML = item;
+                   lstCategories.appendChild(li);
+
+                   var option = document.createElement("option");
+                   option.text = item;
+                   option.value= item;
+                   categoriesMenu.appendChild(option);
+
+               }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <h3>Categories List</h3>
+        <ol id="lstCategories">
+
+        </ol>
+        <h3>Select a Category</h3>
+        <select id="categoriesMenu">
+
+        </select>
+        <h3>Check List</h3>
+      
+    </body>
+</html>

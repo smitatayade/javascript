@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Handling Using this and event properties of event handler</title>
+    <script>
+        function InsertClick(obj, e){
+            document.write(`Button Name : ${obj.name}<br> Value : ${obj.value}<br> ID : ${obj.id}<br> Class : ${obj.className}<br> X POSITION : ${e.clientX}`)
+        }
+    </script>
+    </head>
+    <body>
+        <button name="btnInsert" value="Insert" id="InsButton" class="btn btn-primary" onclick="InsertClick(this, event)">Insert</button>
+    </body>
+</html>

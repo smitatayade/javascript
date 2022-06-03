@@ -1,0 +1,14 @@
+<script>
+    function f1(){
+        var x = 10;
+        var y = "10";
+        document.write(`X==Y : ${x==y}`);       //== convert the "10" into 10 that's why it shows true
+    }                                           //== compare value of different types
+    function f2(){
+        var a = 30;
+        var b = "40";
+        document.write(`A===B :${a===b}`);      //=== not convert "40" into 40 that's why return false
+    }                                           //===compares vakue of same type
+    f1();
+    f2();
+</script>

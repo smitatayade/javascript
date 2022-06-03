@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+           function VerifyCaps(e){
+              var msg  = document.getElementById("msg");
+              if(e.keyCode>=65 &&  e.keyCode<=90) {
+                  msg.style.display = "block";
+              } else {
+                  msg.style.display = "none";
+              }
+           }
+           var users = [
+             {UserName: 'john'},
+             {UserName: 'john12'},
+             {UserName: 'john_nit'},
+             {UserName: 'david'}
+           ];
+           function VerifyUser(){
+               var username = document.getElementById("txtName").value;
+               var userMsg = document.getElementById("userMsg");
+               for(var user of users) {
+                   if(user.UserName==username) {
+                       userMsg.innerHTML = "User Name Taken - Try Another";
+                       userMsg.className= "text-danger";
+                       break;
+                   } else {
+                       userMsg.innerHTML = "User Name Available";
+                       userMsg.className = "text-success";
+                   }
+               }
+           }
+        </script>
+    </head>
+    <body class="container-fluid">
+       <fieldset>
+           <legend>User Name</legend>
+           <input type="text" onkeyup="VerifyUser()" class="form-control" id="txtName">
+           <div id="userMsg">
+           </div>
+           <legend>Password</legend>
+           <input type="password" onkeypress="VerifyCaps(event)" class="form-control" id="txtPwd">
+           <div class="text-warning" id="msg" style="display: none;">
+             <span class="bi bi-exclamation-triangle"></span>
+              Warning : Caps is ON 
+           </div>
+       </fieldset>
+    </body>
+</html>

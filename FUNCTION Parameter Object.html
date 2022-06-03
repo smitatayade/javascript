@@ -1,0 +1,17 @@
+<script>
+    function f1()
+    {
+        function PrintDetails(product)
+        {
+            for(var property in product) {
+                document.write(`${property} - ${product[property]} <br>`);
+            }
+        }
+        PrintDetails({Name: "Samsung TV", Price: 45000.54, Stock: true});
+        document.write("<hr>");
+        var shoe = {Name: "Nike Causuals", Price: 45000.55, Stock: true, Mfd: new Date()}
+        PrintDetails(shoe);
+    }
+    f1();
+ </script>
+ 

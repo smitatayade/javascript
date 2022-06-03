@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           function ShowMsg(){
+               document.getElementById("msg").innerHTML="Name in Block Letters Only".fontcolor('red');
+           }
+           function HideMsg(){
+               document.getElementById("msg").innerHTML="";
+               var txtName = document.getElementById("txtName").value;
+               document.getElementById("txtName").value = txtName.toUpperCase();
+               document.getElementById("txtEmail").focus();         //after entering user name email get focused instead of password
+           }
+        </script>
+    </head>
+    <body>
+       <fieldset>
+           <legend>User Name</legend>
+           <input onfocus="ShowMsg()" onblur="HideMsg()" placeholder="Name in Block Letters" type="text" id="txtName">
+           <div id="msg"></div>
+           <legend>Password</legend>
+           <input type="password" id="txtPwd" class="form-control">
+           <legend>Email</legend>
+           <input type="email" id="txtEmail">
+       </fieldset>
+    </body>
+</html>

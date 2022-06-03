@@ -1,0 +1,18 @@
+<script>
+    class Employee
+    {
+
+    }
+    function f1(){
+       let emp = new Employee();
+       let list = new Array();
+       document.write(
+        ` Is emp derived from Employee?
+          ${emp instanceof Employee} <br>
+          Is list derived from Array or Object? 
+          ${list instanceof Object}
+        `
+       )
+    }
+    f1();
+</script>

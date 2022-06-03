@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <script>
+            function VerifyEmail(){
+                var email = document.getElementById("txtEmail").value;
+                var msg = document.getElementById("msg");
+                if(email.indexOf("@")<2 ) {
+                    msg.innerHTML = "Invalid- @ Required - Min 2 Chars for Email";
+                } else {
+                    msg.innerHTML = "Email Verified";
+                }
+            }
+        </script>
+    </head> 
+    <body>
+        Your Email :
+        <input type="text" id="txtEmail" onblur="VerifyEmail()">
+        <div id="msg"></div>
+    </body>
+</html>

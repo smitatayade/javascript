@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Opening Image in new tab using dblclick miscellaneous event</title>
+        <script>
+            function OpenImage(){
+                window.open(`../assets/shirt.PNG`,`Shirt`,`width=500 height=400`);
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <div class="mt-4">
+            <img ondblclick="OpenImage()" src="../assets/Shirt.PNG" width="150" height="150" title="Double click image to view large">
+        </div>
+    </body>
+</html>
